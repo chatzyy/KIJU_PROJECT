@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="/project/web/src/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    hello
+<body class=" bg-amber-50">
+    <div class="flex min-h-screen">
+        <aside class="w-65 shrink-0 border-r-2 bg-white">
+            <div class="flex flex-col items-center justify-center gap-10">
+                <div class="p-4 pl-6">
+                    <div class="flex">
+                        <div class="p-5 border-2 rounded-xl">
+                            logo
+                        </div>
+                        <div class="p-3">
+                            <div class=" font-bold">
+                                หมูกระทะตะลุยซอย
+                            </div>
+                            
+                            <div class=" text-xs">
+                                MOOKATATALUISOI
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="p-5 pl-10 pr-28 border rounded-xl" href="/project/web/addmin/homepage_addmin/homepage_addmin.html">หน้าหลัก</a>
+                <a class="p-5 pl-10 pr-28 rounded-xl" href="/project/web/addmin/dashbord/dashbord.html">Dashbord</a>
+                <a class="p-5 bg-amber-500 pl-10 pr-28 border rounded-xl" href="/project/web/addmin/queue_addmin/queue_addmin.html">ดูโต๊ะที่จอง</a>
+            </div>
+        </aside>
+        <main class="p-5 h-20 min-w-screen bg-amber-500">
+            <div>
+                <div class=" font-bold text-2xl">
+                    คิวโต๊ะ
+                </div>
+                <div class=" text-xs">
+                    ผังโต๊ะ
+                </div>
+                
+            </div>
+            
+            <!-- content -->
+            <div class="border p-3 mt-10">
+                <h2 class=" font-bold text-xl flex items-center justify-center">
+                    ข้อมูลคิววันนี้
+                </h2>
+            </div>
+            <div>
+                
+            </div>
+        </main>
+    </div>
 </body>
 </html>
