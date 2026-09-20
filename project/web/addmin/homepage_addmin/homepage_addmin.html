@@ -7,42 +7,241 @@
     <link rel="stylesheet" href="/project/web/src/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="">
+<body>
     <!-- Logo -->
-    <div class=" flex pl-4 pt-4 bg-amber-50">
-        <div class="p-6 border-2 border-orange-500 rounded-2xl">
-            logo
-        </div>
-        <div class="ml-4 pt-2">
-            <div class=" text-xl font-bold">
-                หมูกระทะ ตะลุยซอย
+    <nav class="flex justify-between pl-4 pt-4 bg-amber-50 fixed w-full">
+        
+        <div class="flex p-3 border-2 border-orange-500 rounded-2xl">
+            
+            <div class="flex items-center border-2 p-3">
+                logo
             </div>
-            <div class=" text-orange-500">
-                MOOKATA TALUISOI
+
+            <div class="ml-6">             
+                <div class="text-x font-bold">
+                    หมูกระทะ ตะลุยซอย
+                </div>
+                <div class="text-xs text-orange-500">
+                    MOOKATA TALUISOI
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="pl-4 pb-4 pt-2 bg-amber-50">
-        <div>
-            หมูกระทะเตาถ่านโบราณ น้ำจิ้มรสเด็ดระดับตำนานสะท้านซอย!
-        </div>
-    </div>
-
-    <!-- ดูโต๊ะที่จอง -->
-     <div class="flex flex-col items-center justify-center gap-14 mt-40 ">
-        <div>
-            <a class="p-5  bg-amber-500 rounded-xl pl-56 pr-56 shadow-xl border-2 border-orange-500" href="/project/web/addmin/queue_addmin/queue_addmin.html">ดูโต๊ะที่จอง</a>
-        </div>
-        <div>
-            <a class="p-5 bg-amber-500 rounded-xl pl-56 pr-56 shadow-xl border-2 border-orange-500" href="/project/web/addmin/dashbord/dashbord.html">Dashbord</a>
-        </div>
-     </div>
-
-     <!--  -->
-     <div>
-        <div>
             
         </div>
-     </div>
+        
+    
+            
+
+        <!-- ดูโต๊ะที่จอง -->
+        <div class="flex items-center  gap-10">
+            <div>
+                <a class="p-3 pl-16 pr-16 bg-amber-500 rounded-xl  shadow-xl border-2 border-orange-500" href="/project/web/addmin/queue_addmin/queue_addmin.html">รายการจอง</a>
+            </div>
+            <div>
+                <a class="p-3 pl-16 pr-16 bg-amber-500 rounded-xl  shadow-xl border-2 border-orange-500" href="/project/web/addmin/dashbord/dashbord.html">Dashbord</a>
+            </div>
+            
+        </div>
+
+        <div class="pr-10 flex *:border items-center ">
+            <div>
+               Hi! Admin
+            </div>
+        </div>
+
+    </nav>
+    
+
+    
+
+     <!-- content -->
+    <div class="flex justify-between p-10 pt-36">
+       <div class="border p-3">
+            <div class="flex flex-col justify-center items-center">
+                <div>
+                    โต๊ะทั้งหมด
+                </div>
+                <div>
+                    <div class="flex flex-col p-5">
+                <div>50</div>  
+            </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border p-3">
+            <div class="flex flex-col justify-center items-center">
+                <div>
+                    โต๊ะว่าง
+                </div>
+                <div>
+                    <div class="flex flex-col p-5">
+                <div>10 </div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border p-3 ">
+            <div class="flex flex-col justify-center items-center">
+                <div>
+                    คิววันนี้
+                </div>
+                <div>
+                    <div class="flex flex-col p-5">
+                <div>
+                    15 
+                 </div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col border-2">
+            
+            <div>
+                การแจ้งเตือน
+            </div>
+            <div class="flex flex-col p-5">
+                <div>มีการแจ้งเตือนใหม่ 3 รายการ</div>
+                <div>คิว A012 ใกล้ถึงแล้ว</div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+
+    <div class="border p-5 mt-10 mb-10">
+                <div class="flex items-center justify-center">
+                    แผนผังโต๊ะ
+                </div>
+                <br>
+                <h2 class=" font-bold text-xl flex items-center justify-center">
+                    <form action="" class="grid grid-cols-8 gap-10">
+                        <button class=" bg-amber-600">
+                            A01
+                        </button>
+                        <button class=" bg-amber-600">
+                            A02
+                        </button>
+                        <button class=" bg-amber-600">
+                            A03
+                        </button>
+                        <button class=" bg-amber-600">
+                            A04
+                        </button>
+                        <button class=" bg-amber-600">
+                            A05
+                        </button>
+                        <button class=" bg-amber-600">
+                            A06
+                        </button>
+                        <button class=" bg-amber-600">
+                            A07
+                        </button>
+                        <button class=" bg-amber-600">
+                            A08
+                        </button>
+                        <button class=" bg-amber-600">
+                            A09
+                        </button>
+                        <button class=" bg-amber-600">
+                            A10
+                        </button>
+                        <button class=" bg-amber-600">
+                            B01
+                        </button>
+                        <button class=" bg-amber-600">
+                            B02
+                        </button>
+                        <button class=" bg-amber-600">
+                            B03
+                        </button>
+                        <button class=" bg-amber-600">
+                            B04
+                        </button>
+                        <button class=" bg-amber-600">
+                            B05
+                        </button>
+                        <button class=" bg-amber-600">
+                            B06
+                        </button>
+                        <button class=" bg-amber-600">
+                            B07
+                        </button>
+                        <button class=" bg-amber-600">
+                            B08
+                        </button>
+                        <button class=" bg-amber-600">
+                            B09
+                        </button>
+                        <button class=" bg-amber-600">
+                            B10
+                        </button>
+                        <button class=" bg-amber-600">
+                            B11
+                        </button>
+                        <button class=" bg-amber-600">
+                            B12
+                        </button>
+                        <button class=" bg-amber-600">
+                            B13
+                        </button>
+                        <button class=" bg-amber-600">
+                            B14
+                        </button>
+                        <button class=" bg-amber-600">
+                            C01
+                        </button>
+                        <button class=" bg-amber-600">
+                            C02
+                        </button>
+                        <button class=" bg-amber-600">
+                            C03
+                        </button>
+                        <button class=" bg-amber-600">
+                            C04
+                        </button>
+                        <button class=" bg-amber-600">
+                            C05
+                        </button>
+                        <button class=" bg-amber-600">
+                            C06
+                        </button>
+                        <button class=" bg-amber-600">
+                            C07
+                        </button>
+                        <button class=" bg-amber-600">
+                            C08
+                        </button>
+                        <button class=" bg-amber-600">
+                            D01
+                        </button>
+                        <button class=" bg-amber-600">
+                            D02
+                        </button>
+                        <button class=" bg-amber-600">
+                            D03
+                        </button>
+                        <button class=" bg-amber-600">
+                            D04
+                        </button>
+                        <button class=" bg-amber-600">
+                            D05
+                        </button>
+                        <button class=" bg-amber-600">
+                            E01
+                        </button>
+                        <button class=" bg-amber-600">
+                            E02
+                        </button>
+                        <button class=" bg-amber-600">
+                            E03
+                        </button>
+                    </form>
+                </h2>
+            </div>
+            <div>
+        
 </body>
 </html>
