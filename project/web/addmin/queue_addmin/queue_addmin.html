@@ -121,7 +121,97 @@
     </div>
 
 
-    
+<!-- Modal Form -->
+<div id="myModal"
+    class="hidden fixed inset-0 bg-black/50 items-center justify-center z-50">
+
+    <div class="bg-white rounded-xl p-6 w-96">
+
+        <!-- หัวข้อ -->
+        <div class="flex justify-between items-center mb-5">
+
+            <h2 class="text-xl font-bold">
+                ข้อมูลการจอง
+            </h2>
+
+            <button 
+                onclick="closeForm()"
+                class="text-2xl">
+                ×
+            </button>
+
+        </div>
+
+        <!-- โต๊ะ -->
+        <div class="mb-4">
+            <label class="block font-bold mb-2">
+                โต๊ะ
+            </label>
+
+            <input 
+                id="tableName"
+                type="text"
+                class="border rounded-lg p-2 w-full bg-gray-100"
+                readonly>
+        </div>
+
+        <!-- เวลา -->
+        <div class="mb-4">
+            <label class="block font-bold mb-2">
+                เวลา
+            </label>
+
+            <input 
+                type="time"
+                value="18:30"
+                class="border rounded-lg p-2 w-full">
+        </div>
+
+        <!-- ชื่อลูกค้า -->
+        <div class="mb-4">
+            <label class="block font-bold mb-2">
+                ชื่อลูกค้า
+            </label>
+
+            <input 
+                type="text"
+                placeholder="กรอกชื่อลูกค้า"
+                class="border rounded-lg p-2 w-full">
+        </div>
+
+        <!-- จำนวนคน -->
+        <div class="mb-5">
+            <label class="block font-bold mb-2">
+                จำนวนคน
+            </label>
+
+            <input 
+                type="number"
+                placeholder="จำนวนคน"
+                class="border rounded-lg p-2 w-full">
+        </div>
+
+        <!-- ปุ่ม -->
+        <div class="flex justify-end gap-3">
+
+            <button
+                onclick="closeForm()"
+                class="border px-4 py-2 rounded-lg">
+                ยกเลิก
+            </button>
+
+            <button
+                onclick="saveForm()"
+                class="bg-amber-500 px-4 py-2 rounded-lg font-bold">
+                ยืนยัน
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 </body>
 </html>
