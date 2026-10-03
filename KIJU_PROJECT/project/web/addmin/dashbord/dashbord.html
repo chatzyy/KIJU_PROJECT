@@ -190,18 +190,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../../../../javascript/supabase.js"></script>
 
-    <script>
-        // ต้องมี id: statBookings, statCustomers, statIncome, statFree, chart
-        async function load() {
+   <script>
+    async function load() {
+        try {
             const data = await API.dashboard();
 
             statBookings.textContent = data.bookings;
             statCustomers.textContent = data.customers;
-            statIncome.textContent = data.income.toLocaleString() + ' บาท';
+            statIncome.textContent =
+                data.income.toLocaleString() + ' บาท';
             statFree.textContent = data.free;
 
-            // แสดงข้อมูลรายชั่วโมงตั้งแต่ 11:00 ถึง 22:00
-            const hours = Array.from({ length: 12 }, (_, index) => index + 11);
+            const hours = Array.from(
+                { length: 12 },
+                (_, index) => index + 11
+            );
+
             const maxBookings = Math.max(
                 1,
                 ...hours.map((hour) => data.byHour[hour] || 0)
@@ -213,17 +217,28 @@
                         <div class="flex-1 text-center text-xs">
                             <div
                                 class="rounded-t bg-orange-500"
-                                style="height: ${(data.byHour[hour] || 0) / maxBookings * 100}%"
+                                style="height: ${
+                                    (data.byHour[hour] || 0)
+                                    / maxBookings * 100
+                                }%"
                             ></div>
                             ${hour}
                         </div>
                     `).join('')}
                 </div>
             `;
-        }
 
-        load();
-        API.live(['reservations', 'income', 'tables'], load);
-    </script>
+        } catch (error) {
+            console.error('Dashboard error:', error);
+        }
+    }
+
+    load();
+
+    API.live(
+        ['reservations', 'income', 'restaurant_tables'],
+        load
+    );
+</script>
 </body>
 </html>

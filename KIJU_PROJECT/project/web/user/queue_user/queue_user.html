@@ -232,25 +232,35 @@
         };
 
         async function loadReservation() {
-            const reservation = await API.myReservation();
+    const reservation = await API.myReservation();
 
-            elements.empty.hidden = Boolean(reservation);
-            elements.box.hidden = !reservation;
+    // ไม่มีคิว หรือคิวเสร็จสิ้นแล้ว
+    if (!reservation || reservation.status === 'done') {
+        elements.empty.hidden = false;
+        elements.box.hidden = true;
 
-            if (!reservation) {
-                return;
-            }
-
-            elements.number.textContent = reservation.reservation_number;
-            elements.table.textContent = reservation.table_id;
-            elements.status.textContent = statusLabels[reservation.status];
-
-            elements.time.textContent = reservation.reservation_time;
-
-            elements.cancelButton.hidden = !['waiting', 'called'].includes(
-                reservation.status
-            );
+        // ลบเลขคิวที่เก็บไว้ในเครื่อง
+        if (reservation?.status === 'done') {
+            localStorage.removeItem('reservation_id');
         }
+
+        return;
+    }
+
+    // ยังมีคิวอยู่
+    elements.empty.hidden = true;
+    elements.box.hidden = false;
+
+    elements.number.textContent = reservation.reservation_number;
+    elements.table.textContent = reservation.table_id;
+    elements.status.textContent = statusLabels[reservation.status];
+    elements.time.textContent = reservation.reservation_time;
+
+    // ยกเลิกได้เฉพาะตอนรอเรียก / ถึงคิว
+    elements.cancelButton.hidden = !['waiting', 'called'].includes(
+        reservation.status
+    );
+}
 
         async function cancelReservation() {
             if (!confirm('ยืนยันยกเลิกคิว?')) {
