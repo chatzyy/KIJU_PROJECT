@@ -1,11 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>หมูกระทะ ตะลุยซอย - ระบบจองคิว</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+    </style>
 </head>
-<body>
-    
+<body class="bg-[#FBF8F4] text-gray-800 flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-100 flex flex-col justify-between h-full">
+        <div class="p-6">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                    <!-- Icon Placeholder -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold leading-tight">หมูกระทะ ตะลุยซอย</h1>
+                    <p class="text-[10px] text-orange-500 font-semibold tracking-wider">MOO KATA TALUI SOI</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="space-y-2">
+                <a href="/project/web/user/homepage_user/homepage_user.html" class="flex items-center space-x-3 px-4 py-3  text-gray-500 hover:bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <div>
+                        <div class="text-sm font-medium">หน้าหลัก</div>
+                        <div class="text-[10px] ">Home</div>
+                    </div>
+                </a>
+                <a href="/project/web/user/table_user/table_user.html" class="flex items-center space-x-3 px-4 py-3 text-orange-600 bg-orange-50 rounded-xl transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <div>
+                        <div class="text-sm font-medium">จองโต๊ะ</div>
+                        <div class="text-[10px]">Table Queue</div>
+                    </div>
+                </a>
+                <a href="/project/web/user/queue_user/queue_user.html" class="flex items-center space-x-3 px-4 py-3  text-gray-500 hover:bg-gray-50 rounded-xl transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <div class="text-sm font-medium">โต๊ะของฉัน</div>
+                        <div class="text-[10px]">My Table</div>
+                    </div>
+                </a>
+                <a href="/project/web/user/notification_user/notification_user.html" class="flex items-center space-x-3 px-4 py-3 text-gray-500 hover:bg-gray-50 rounded-xl transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <div>
+                        <div class="text-sm font-medium">แจ้งเตือน</div>
+                        <div class="text-[10px]">Alerts</div>
+                    </div>
+                </a>
+            </nav>
+        </div>
+
+        <!-- User Profile -->
+        <div class="p-6">
+            <div class="flex items-center space-x-3">
+                <img src="https://i.pravatar.cc/150?img=11" alt="User" class="w-10 h-10 rounded-full border border-gray-200">
+                <div>
+                    <div class="text-sm font-bold text-gray-800">คุณ สมศักดิ์</div>
+                    <div class="text-[10px] text-gray-500">Somsak Sukjai</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto">
+        <!-- Header -->
+        <header class="px-8 py-6 flex justify-between items-center border-b border-gray-200/50">
+            <div>
+                <h2 class="text-xl font-bold">จองโต๊ะ</h2>
+                <p class="text-xs text-gray-500">Table Queue</p>
+            </div>
+           
+        </header>
+
+        <div class="p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Left Column (Span 2) -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Welcome Card -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">ยินดีต้อนรับสู่ หมูกระทะ ตะลุยซอย</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            หมูกระทะเตาถ่านโบราณ น้ำจิ้มรสเด็ดระดับตำนานสะท้านซอย!<br>
+                            คัดสรรวัตถุดิบพรีเมียมเพื่อความฟินของทุกคน
+                        </p>
+                    </div>
+
+                    <!-- Live Queue Status -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">สถานะโต๊ะปัจจุบัน</h3>
+                                <p class="text-xs text-gray-400">Live Table Status</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-6">
+                           
+
+                            <!-- Waiting Info -->
+                            <div class="flex-1 flex flex-col justify-center space-y-5">
+                                <div class="flex justify-center">
+            <div class="border p-5 mt-10 mb-10">
+                        <div class="flex items-center justify-center">
+                            แผนผังโต๊ะ
+                        </div>
+                        <br>
+                        <h2 class=" font-bold text-xl flex items-center justify-center">
+                            <form action="" class="grid grid-cols-8 gap-10">
+                                <button class=" rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A01
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A02
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A03
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A04
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A05
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A06
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A07
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A08
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A09
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>A10
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B01
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B02
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B03
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B04
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B05
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B06
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B07
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B08
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B09
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B10
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B11
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B12
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B13
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>B14
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C01
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C02
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C03
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C04
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C05
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C06
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C07
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>C08
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>D01
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>D02
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>D03
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>D04
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>D05
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>E01
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>E02
+                                </button>
+                                <button class="rounded-xl bg-amber-600">
+                                    <div class=" text-3xl"><i class="bx bx-bench"></i></div>E03
+                                </button>
+                            </form>
+                        </h2>
+                    </div>
+                    <div>
+            </div>
+            <div class="flex flex-col gap-3 pt-16 pl-5 ">
+                <div class="flex gap-3">
+                    <div class="w-5 h-5 bg-amber-600"></div>
+                    <span>ว่าง</span>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-5 h-5 bg-gray-500"></div>
+                    <span>ไม่ว่าง</span>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-5 h-5 bg-red-500"></div>
+                    <span>กำลังจอง</span>
+                </div>
+            </div>
+        </div>     
+    </main>
 </body>
 </html>
