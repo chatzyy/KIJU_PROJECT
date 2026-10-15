@@ -258,19 +258,34 @@
 
     // ยกเลิกได้เฉพาะตอนรอเรียก / ถึงคิว
     elements.cancelButton.hidden = !['waiting', 'called'].includes(
-        reservation.status
+    String(reservation.status || '').trim().toLowerCase()
+
     );
 }
 
-        async function cancelReservation() {
-            if (!confirm('ยืนยันยกเลิกคิว?')) {
-                return;
-            }
+        
+async function cancelReservation() {
+  try {
+    if (!confirm('ยืนยันยกเลิกคิว?')) return;
 
-            const reservation = await API.myReservation();
-            await API.setStatus(reservation, 'cancelled');
-            await loadReservation();
-        }
+    const reservation = await API.myReservation();
+
+    if (!reservation) {
+      alert('ไม่พบข้อมูลคิว กรุณาลองจองใหม่');
+      return;
+    }
+
+    await API.setStatus(reservation, 'cancelled');
+
+    alert('ยกเลิกคิวสำเร็จ');
+    await loadReservation();
+
+  } catch (error) {
+    console.error('ยกเลิกคิวไม่สำเร็จ:', error);
+    alert('ยกเลิกคิวไม่สำเร็จ: ' + (error.message || error));
+  }
+}
+
 
         elements.cancelButton.onclick = cancelReservation;
 
