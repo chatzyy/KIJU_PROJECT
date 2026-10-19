@@ -6,8 +6,8 @@
 
 1. เปิดโฟลเดอร์โปรเจกต์นี้ด้วย VS Code
 2. แนะนำให้ติดตั้ง/ใช้ Live Server
-3. เปิด `index.html` เพื่อเข้าหน้าลูกค้า
-4. เปิด `admin.html` เพื่อเข้าหน้า Admin
+3. เข้าไฟล์ `run` เพื่อเข้าหน้า
+4. เปิด `project.html` เพื่อเข้าหน้า project
 
 หรือเปิดไฟล์โดยตรง:
 - `project/web/user/homepage_user/homepage_user.html`
